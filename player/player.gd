@@ -13,7 +13,8 @@ func handleInput():
 func updateAnimation():
 	# Si el personaje está quieto (idle), las animaciones se detienen
 	if velocity.length() == 0:
-		animations.stop()
+		if animations.is_playing():
+			animations.stop()
 	# De lo contrario, las animaciones se activan
 	else:
 		var direction = "down"
